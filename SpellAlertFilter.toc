@@ -1,0 +1,17 @@
+## Interface: 60000
+
+## Title: Spell Alert Filter
+## Notes: Hides annoying spell alert graphics.
+
+## Author: Phanx
+## X-Email: addons@phanx.net
+## X-Copyright: Copyright (c) 2014 Phanx. All rights reserved.
+
+## SavedVariables: SpellAlertFilter
+
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+Libs\PhanxAddonStub\AddonStub.lua
+
+Addon.lua
