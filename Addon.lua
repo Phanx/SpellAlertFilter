@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------
 -- SpellAlertFilter
 --	Hides annoying spell alert graphics.
--- Copyright (c) 2014 Phanx <addons@phanx.net>. All rights reserved.
+-- Copyright (c) 2014-2015 Phanx <addons@phanx.net>. All rights reserved.
 ------------------------------------------------------------------------
 
 local L = setmetatable({}, { __index = function(L, k)
