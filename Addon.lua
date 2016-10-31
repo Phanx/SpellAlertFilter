@@ -1,8 +1,12 @@
-------------------------------------------------------------------------
--- SpellAlertFilter
---	Hides annoying spell alert graphics.
--- Copyright (c) 2014-2016 Phanx <addons@phanx.net>. All rights reserved.
-------------------------------------------------------------------------
+--[[--------------------------------------------------------------------
+	SpellAlertFilter
+	Hides annoying spell alert graphics.
+	Copyright (c) 2014-2016 Phanx <addons@phanx.net>
+	All rights reserved.
+	You MAY reuse code from this addon in any way and for any purpose,
+	as long you DO NOT use the names of this addon and/or its author
+	anywhere in your project other than an OPTIONAL credits notation.
+----------------------------------------------------------------------]]
 
 local L = setmetatable({}, { __index = function(L, k)
 	local v = tostring(k)
@@ -35,15 +39,12 @@ L["disabled"] = "|cffff7f7f" .. L["disabled"] .. "|r"
 
 local setupMode
 
-SpellAlertFilter = {
-	[170588] = true, -- Maelstrom Weapon 1/5
-	[170587] = true, -- Maelstrom Weapon 2/5
-	[170586] = true, -- Maelstrom Weapon 3/5
-	[170585] = true, -- Maelstrom Weapon 4/5
+SpellAlertFilterDB = {
+	[124275] = true, -- Light Stagger
 }
 
 SpellActivationOverlayFrame:SetScript("OnEvent", function(self, event, spellID, ...)
-	if event == "SPELL_ACTIVATION_OVERLAY_SHOW" and SpellAlertFilter[spellID] then
+	if event == "SPELL_ACTIVATION_OVERLAY_SHOW" and SpellAlertFilterDB[spellID] then
 		return
 	end
 	if setupMode then
@@ -67,7 +68,7 @@ local options = {
 			DEFAULT_CHAT_FRAME:AddMessage("   " .. format(L["%d (%s)"], spellID, GetSpellInfo(spellID) or UNKNOWN))
 		end
 	end,
-	loud = function()
+	setup = function()
 		setupMode = not setupMode
 		DEFAULT_CHAT_FRAME:AddMessage("|cff7fff7fSpellAlertFilter:|r " .. format(L["Spell alert reporting now %s."], setupMode and L["enabled"] or L["disabled"]))
 	end,
@@ -96,9 +97,9 @@ SlashCmdList.SPELLALERTFILTER = function(cmd)
 		end
 	else
 		DEFAULT_CHAT_FRAME:AddMessage("|cff7fff7fSpellAlertFilter:|r " .. L["Use /saf with the following commands:"])
-		DEFAULT_CHAT_FRAME:AddMessage("   12345 - Add/remove spell ID 123456 to/from the filter list.")
+		DEFAULT_CHAT_FRAME:AddMessage("   123456 - Add/remove spell ID 123456 to/from the filter list.")
 		DEFAULT_CHAT_FRAME:AddMessage("   list - List the spell alerts currently on the filter list.")
-		DEFAULT_CHAT_FRAME:AddMessage("   loud - Show a message in the chat frame with the related spell ID whenever a spell alert is displayed.")
+		DEFAULT_CHAT_FRAME:AddMessage("   setup - Show a message in the chat frame with the related spell ID whenever a spell alert is displayed.")
 		DEFAULT_CHAT_FRAME:AddMessage("   reset - Remove all spell alerts from the filter list.")
 	end
 end
