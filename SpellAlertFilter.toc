@@ -1,12 +1,12 @@
-## Interface: 70100
+## Interface: 70300
 
 ## Title: Spell Alert Filter
 ## Notes: Hides annoying spell alert graphics.
 
 ## Author: Phanx
 ## X-Email: addons@phanx.net
-## X-Copyright: Copyright (c) 2014-2016 Phanx. All rights reserved.
-## X-Website: https://github.com/Phanx/SpellAlertFilter
+## X-License: All rights reserved
+## X-Website: https://github.com/phanx-wow/SpellAlertFilter
 
 ## SavedVariables: SpellAlertFilter
 

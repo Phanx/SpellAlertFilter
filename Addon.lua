@@ -1,11 +1,11 @@
 --[[--------------------------------------------------------------------
 	SpellAlertFilter
 	Hides annoying spell alert graphics.
-	Copyright (c) 2014-2016 Phanx <addons@phanx.net>
-	All rights reserved.
-	You MAY reuse code from this addon in any way and for any purpose,
-	as long you DO NOT use the names of this addon and/or its author
-	anywhere in your project other than an OPTIONAL credits notation.
+	https://github.com/phanx-wow/SpellAlertFilter
+
+	Copyright 2014-2018 Phanx <addons@phanx.net>
+	All rights reserved. Permission is granted to reuse code from
+	this addon in other projects, as long as my name is not used.
 ----------------------------------------------------------------------]]
 
 local L = setmetatable({}, { __index = function(L, k)
